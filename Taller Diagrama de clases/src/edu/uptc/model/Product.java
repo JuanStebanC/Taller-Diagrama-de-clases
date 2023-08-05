@@ -5,7 +5,7 @@ public class Product {
 	private double value;
 	private int stock;
 	private boolean iva;
-	final int STOCK_MIN = 10;
+	final int STOCK_MIN = 10; //no pueden quedar menos de 10 existencias
 	private ETypeProduct typeProduct;
 	
 	public Product(String name, double value, int stock, boolean iva, ETypeProduct typeProduct) {
@@ -19,13 +19,13 @@ public class Product {
 	public String getName() {
 		return name;
 	}
-	private void setName(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 	public double getValue() {
 		return value;
 	}
-	private void setValue(double value) {
+	public void setValue(double value) {
 		this.value = value;
 	}
 	public int getStock() {

@@ -1,12 +1,13 @@
 package edu.uptc.model;
 
 public class Sale {
-	private int cant;
 	private Product product;
-	public Sale(int cant, Product product) {
+	private int cant;
+	
+	public Sale(Product product, int cant) {
 		super();
-		this.cant = cant;
 		this.product = product;
+		this.cant = cant;
 	}
 	public int getCant() {
 		return cant;
@@ -22,10 +23,6 @@ public class Sale {
 	}
 	public double calcDiscount() {
 		double discount = 0;
-		/*- Cantidad entre 5 y 10 5%
-		- Entre 11 y 20 10%
-		- Entre 21 y 50 20%
-		- Mayor a 50 30%*/
 		if (this.getCant() >= 5 && this.getCant() <= 10) {
 			discount = 0.05;
 		} else if (this.getCant() >= 11 && this.getCant() <= 20) {
@@ -38,7 +35,7 @@ public class Sale {
 		return discount;
 	}
 	public double getTotalSale() {
-		double total = (product.getValue())-(calcDiscount())+(calcIva());
+		double total = (product.getValue()*this.getCant())-calcDiscount()+calcIva();
 		return total;
 				
 	}

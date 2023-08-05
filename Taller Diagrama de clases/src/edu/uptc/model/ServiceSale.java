@@ -3,8 +3,7 @@ package edu.uptc.model;
 public class ServiceSale {
 	private Sale sale;
 
-	public ServiceSale(Sale sale) {
-		super();
+	public ServiceSale(Sale sale, int cant) {
 		this.sale = sale;
 	}
 
